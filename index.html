@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mau Bermain?</title>
+  <style>
+    body {background: black; color: red; text-align: center; font-family: sans-serif;}
+    .hidden {display: none;}
+  </style>
+</head>
+<body>
+
+<div id="page1">
+  <h1>MAU BERMAIN?</h1>
+  <button onclick="mulai()">MULAI</button>
+</div>
+
+<div id="page2" class="hidden">
+  <h2>PROSES HACKING...</h2>
+  <p id="hackText"></p>
+</div>
+
+<div id="jumpscare" class="hidden">
+  <img src="https://iili.io/3Ye99tV.jpg" width="100%" />
+  <audio id="scream" src="https://voca.ro/1kRZHLCjbsUp.mp3" autoplay></audio>
+</div>
+
+<script>
+function mulai() {
+  document.getElementById('page1').classList.add('hidden');
+  document.getElementById('page2').classList.remove('hidden');
+
+  let teks = "Mengakses Data... Meretas Sistem... Mengambil File Pribadi...";
+  let index = 0;
+
+  let typing = setInterval(() => {
+    document.getElementById('hackText').innerHTML += teks[index];
+    index++;
+    if(index >= teks.length){
+      clearInterval(typing);
+      setTimeout(jumpscare, 1000); // Delay 1 detik ke jumpscare
+    }
+  }, 100); // Kecepatan ketik
+}
+
+function jumpscare() {
+  document.getElementById('page2').classList.add('hidden');
+  document.getElementById('jumpscare').classList.remove('hidden');
+  document.getElementById('scream').play();
+}
+</script>
+
+</body>
+</html>
