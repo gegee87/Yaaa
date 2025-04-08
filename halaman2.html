@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AKUN SUDAH DIRETAS!</title>
+<style>
+body {
+background:black;
+color:lime;
+font-family: monospace;
+overflow:hidden;
+}
+h1 {
+color:red;
+font-size:50px;
+text-align:center;
+animation:blink 0.2s infinite;
+}
+@keyframes blink {
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+</style>
+<audio id="sound" src="https://www.myinstants.com/media/sounds/evil-laugh.mp3" autoplay loop></audio>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+document.body.requestFullscreen();
+setInterval(()=>{
+alert("AKUNMU SUDAH DIRETAS !!! DATA MU SUDAH AKU CURI !!!");
+},200);
+setInterval(()=>{
+document.body.style.background = document.body.style.background=="black"?"red":"black";
+},50);
+setInterval(()=>{
+let teks = document.createElement('div');
+teks.style.position = 'absolute';
+teks.style.left = Math.random()*window.innerWidth+"px";
+teks.style.top = Math.random()*window.innerHeight+"px";
+teks.style.color = "lime";
+teks.style.fontSize = "20px";
+teks.innerText = "AKUN DIRETAS!";
+document.body.appendChild(teks);
+},100);
+});
+</script>
+</head>
+<body>
+<h1>AKUN SUDAH DIRETAS!!!</h1>
+<marquee scrollamount="20" direction="left">DATA KAMU DIAMBIL! HP KAMU DIKONTROL! SEMUA FILE HILANG!</marquee>
+<marquee scrollamount="20" direction="right">TIDAK ADA YANG BISA MENYELAMATKANMU!!!</marquee>
+</body>
+</html>
